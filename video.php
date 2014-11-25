@@ -16,5 +16,5 @@ function api($method, $params = array(), $token1)
 $api = api('video.get', array('videos' => $_REQUEST['u']), $token['access_token']);
 
 $clip_url = $api['response'][1]['files']['mp4_720'];;
-echo file_get_contents($clip_url);
+echo file_get_contents(urlencode($clip_url));
 ?>
