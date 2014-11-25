@@ -16,7 +16,5 @@ function api($method, $params = array(), $token1)
 $api = api('video.get', array('videos' => $_REQUEST['u']), $token['access_token']);
 
 $clip_url = $api['response'][1]['files']['mp4_720'];;
-echo $clip_url;
-echo "123";
-//header('Location: ' . $clip_url, true, 301);
+echo file_get_contents($clip_url);
 ?>
